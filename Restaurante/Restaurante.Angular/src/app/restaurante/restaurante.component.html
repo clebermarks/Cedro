@@ -1,0 +1,69 @@
+<!-- INÍCIO DO CONTEÚDO -->
+<section class="content-header">
+</section>
+
+<section class="content">
+
+  <!-- INÍCIO DO CONTEÚDO -->
+  <div class="jumbotron welcome-jumbotron">
+    <div class="panel panel-default">
+
+      <!-- Default panel contents -->
+      <div class="panel-heading" style="text-align: left; background-color: lightsalmon">RESTAURANTES</div>
+
+      <div class="panel-body">
+
+        <!-- FILTROS DE PESQUISA -->
+        <div class="form-group-sm">
+          <button type="button" class="btn btn-primary" (click)="buscarRestaurantes()">
+            <span class="glyphicon glyphicon-search"></span> Pesquisar
+          </button>
+          &nbsp;
+          <button type="button" class="btn btn-warning" routerLink="/restaurante/novo">
+            <span class="glyphicon glyphicon-plus"></span> Cadastrar
+          </button>
+        </div>
+
+        <div class="form-group-sm" style="text-align: left">
+          <label class="control-label">Nome :</label>
+          <input class="form-control" type="text" [(ngModel)]="nameFiltro" />
+        </div>
+
+      </div>
+
+      <!-- TABELA COM RESULTADO -->
+      <div class="table-responsive">
+        <table class="table table-stripped table-hover table-bordered">
+
+          <thead>
+            <tr>
+              <th></th>
+              <th class="th70px"></th>
+              <th>Restaurantes</th>
+            </tr>
+          </thead>
+
+          <tbody style="text-align: left">
+            <tr *ngFor="let item of restaurantes">
+              <td class="col-md-1" style="text-align: center">
+                <a [routerLink]="['/restauranteEditar', item.RestauranteId]" title="Editar">
+                  <span class="glyphicon glyphicon-edit"></span>
+                </a>
+              </td>
+              <td class="col-md-1" style="text-align: center">              
+                <a (click)="apagarRestaurante(item.RestauranteId)" title="Remover">
+                  <span class="glyphicon glyphicon-erase"></span>
+                </a>
+              </td>
+              <td>{{ item.RestauranteNome }}</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<!-- FINAL DO CONTEÚDO -->

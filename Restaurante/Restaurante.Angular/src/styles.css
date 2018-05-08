@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+ /*
+  * Jumbotrons
+  * ----------
+  */
+  .jumbotron {
+    background-color: #fff;
+    text-align:center;
+  }
+
+  .jumbotron h2 {
+    font-size: 40px;
+  }
+  
+  .welcome-jumbotron h1 {
+    margin-bottom: 60px;
+  }
+  
+  .welcome-jumbotron p {
+    margin-bottom: 60px;
+    font-size: 30px;
+  }
+
+  

@@ -1,0 +1,52 @@
+<!-- INÍCIO DO CONTEÚDO -->
+<section class="content-header">
+</section>
+
+<section class="content">
+
+  <div class="jumbotron welcome-jumbotron">
+    <div class="panel panel-default">
+
+      <!-- Default panel contents -->
+      <div class="panel-heading" style="text-align: left; background-color: lightpink">PRATOS</div>
+
+      <div class="panel-body">
+
+        <input type="hidden" [(ngModel)]="prato.Id" />
+        <div class="form-group-sm">
+          <button type="button" class="btn btn-success" (click)="salvarPrato()">
+            <span class="glyphicon glyphicon-save"></span> Salvar
+          </button>
+          &nbsp;
+          <button type="button" class="btn btn-danger" routerLink="/prato">
+            <span class="glyphicon glyphicon-remove"></span> Cancelar
+          </button>
+        </div>
+        <br>
+
+        <div class="form-group-sm" style="text-align: left">
+          <div class="col-sm-4" style="display: inline-grid">
+            <label class="control-label">Restaurante :</label>
+            <select [(ngModel)]="prato.RestauranteId">
+              <option *ngFor="let restaurante of restaurantes" [ngValue]="restaurante.RestauranteId">{{ restaurante.RestauranteNome }}</option>
+            </select>
+          </div>
+          <div class="col-sm-6">
+            <label class="control-label">Prato :</label>
+            <input id="Nome" [(ngModel)]="prato.Nome" type="text" class="form-control" />
+          </div>
+          <div class="col-sm-2">
+            <label class="control-label">Preço :</label><br>
+            <input currencyMask [(ngModel)]="prato.Preco" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- FINAL DO CONTEÚDO -->
